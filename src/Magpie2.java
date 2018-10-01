@@ -30,6 +30,7 @@ public class Magpie2
 	 */
 	public String getResponse(String statement)
 	{
+		int statementLength = statement.length();
 		String response = "";
 		if (statement.indexOf("no") >= 0)
 		{
@@ -41,6 +42,17 @@ public class Magpie2
 				|| statement.indexOf("brother") >= 0)
 		{
 			response = "Tell me more about your family.";
+		}
+		else if (statement.indexOf("dog") >= 0
+				|| statement.indexOf("cat") >= 0)
+		{
+			response = "Tell me more about your pets";
+		}
+		else if (statement.indexOf("Mr. Pennebacker") >= 0
+				|| statement.indexOf("Mr. P") >= 0
+				|| statement.indexOf("Pennebacker") >= 0)
+		{
+			response = "He sounds like a good teacher.";
 		}
 		else
 		{

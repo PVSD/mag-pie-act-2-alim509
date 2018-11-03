@@ -32,7 +32,11 @@ public class Magpie2
 	{
 		int statementLength = statement.length();
 		String response = "";
-		if (statement.indexOf("no") >= 0)
+		if (statement.trim().length() < 0)
+		{
+			response = "Say something. please.";
+		}
+		else if (statement.indexOf("no") >= 0)
 		{
 			response = "Why so negative?";
 		}
@@ -54,6 +58,18 @@ public class Magpie2
 		{
 			response = "He sounds like a good teacher.";
 		}
+		else if (statement.toLowerCase().indexOf("food") >= 0)
+		{
+			response = "I cannot consume food for I am only a bot with no need for such forms of energy.";
+		}
+		else if (statement.toLowerCase().indexOf("ugly") >= 0)
+		{
+			response = "It is not nice to call anybody ugly!";
+		}
+		else if (statement.toLowerCase().indexOf("life") >= 0)
+		{
+			response = "Life has no meaning for a bot like me.";
+		}
 		else
 		{
 			response = getRandomResponse();
@@ -67,7 +83,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -87,6 +103,14 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4)
+		{
+			response = "I find that intriguing.";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "That is interesting.";
 		}
 
 		return response;
